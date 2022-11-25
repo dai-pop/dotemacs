@@ -343,39 +343,6 @@
           (lambda ()
             (setq file-name-handler-alist my:saved-file-name-handler-alist)))
 
-(leaf font
-  :config
-  ;; 絵文字
-  ;;(unicode-fonts-setup) ; 最初に本コマンドの実行が必要
-  ;;(all-the-icons-install-fonts)
-  (leaf unicode-fonts
-    :ensure t)
-  (leaf all-the-icons
-    :ensure t)
-  ;; フォント設定
-  ;;
-  ;; abcdefghik
-  ;; 0123456789
-  ;; あいうえお
-  (let* ((family "Cica")
-         (fontspec (font-spec :family family :weight 'normal)))
-    (set-face-attribute 'default nil :family family :height 120)
-    (set-fontset-font nil 'ascii fontspec nil 'append)
-    (set-fontset-font nil 'japanese-jisx0208 fontspec nil 'append))
-  (add-to-list 'face-font-rescale-alist '(".*icons.*" . 0.9))
-  (add-to-list 'face-font-rescale-alist '(".*FontAwesome.*" . 0.9))
-  (leaf text-scale
-    :hydra (hydra-zoom ()
-                       "Zoom"
-                       ("g" text-scale-increase "in")
-                       ("l" text-scale-decrease "out")
-                       ("r" (text-scale-set 0) "reset")
-                       ("0" (text-scale-set 0) :bind nil :exit t))
-    :bind ("<f2>" . hydra-zoom/body)))
-
-
-
-
 
 (global-set-key (kbd "C-h")       'backward-delete-char)
 (global-set-key (kbd "C-m")       'newline-and-indent)
