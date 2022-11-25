@@ -54,6 +54,19 @@
     (leaf-keywords-init)))
 
 ;; ここにいっぱい設定を書く
+;;
+;; テンプレ挿入は以下
+;; M-x leaf-convert-insert-template　[Enter]
+;; csv-mode
+
+(leaf ddskk
+  :doc "Simple Kana to Kanji conversion program."
+  :req "ccc-1.43" "cdb-20141201.754"
+  :tag "input method" "mule" "japanese"
+  :url "https://github.com/skk-dev/ddskk"
+  :added "2022-11-25"
+  :ensure t
+  :after ccc cdb)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
