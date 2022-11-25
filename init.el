@@ -90,9 +90,9 @@
     (redraw-frame))
 
   :bind (("M-ESC ESC" . c/redraw-frame))
-  :custom '((user-full-name . "Daisuke Nakamura")
-            (user-mail-address . "dn@example.com")
-            (user-login-name . "nakamud")
+  :custom '((user-full-name . "Dai Pop")
+            (user-mail-address . "daipop@example.com")
+            (user-login-name . "daipop")
             (create-lockfiles . nil)
             (debug-on-error . t)
             (init-file-debug . t)
